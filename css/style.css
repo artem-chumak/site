@@ -15,11 +15,11 @@
 :root {
   --gap: 40px;
   --color-bg-default: #353636;
-  --color-bg-secondary: rgba(25,25,25,.2);
+  --color-bg-secondary: rgba(28, 28, 28, 0.2);
   --color-text-primary: #F2F0EB;
   --color-text-secondary: rgba(255,255,255,.6);
   --color-text-ghost: rgba(255,255,255,.3);
-  --color-link-hover: #0E8A8A;
+  --color-link-hover: #F66262;
   --text-size-m: 16px;
   --text-size-l: 24px;
   --text-size-xl: 48px;
@@ -32,6 +32,8 @@
 
   --text-card-title: 24px;
   --text-card: 14px;
+
+
 }
 
 @media (prefers-color-scheme: light){
@@ -90,12 +92,15 @@ body{
   margin: 0 1em;
   color: var(--color-text-ghost);
 }
-a{
+
+a {
   transition: color .2s ease;
 }
-a:hover{
+
+a:hover {
   color: var(--color-link-hover);
 }
+
 .header-link-big{
   display: inline;
 }
@@ -149,14 +154,20 @@ a:hover{
   font-size: var(--text-section);
 }
 
+
+
 .section-ref {
   color: var(--color-text-primary);
   font-family: 'Montserrat', sans-serif;
-  margin: 0 0 5px 0;
+  margin: 0;
   text-decoration: none;
 }
 
-.doing-list{
+.section-text:last-child {
+  margin: 0;
+}
+
+/* .doing-list{
   position: relative;
   height: 1em;
   padding-left: 0;
@@ -183,6 +194,7 @@ a:hover{
 .doing-list-item:nth-child(1) {
   animation-delay: 4s;
 }
+
 @keyframes animation {
   0% {
     transform: translateY(0);
@@ -193,8 +205,8 @@ a:hover{
   55%, 100% {
     transform: translateY(-200%);
   }
-}
-.section{
+} */
+.section {
   padding: 60px 0;
 }
 
@@ -217,7 +229,7 @@ a:hover{
 
 .card {
   display: block;
-  padding: 24px 20px 20px;
+  padding: 28px 20px 20px;
   background: var(--color-bg-secondary);
   border-radius: 6px;
   font-size: var(--text-size-m);
@@ -225,6 +237,8 @@ a:hover{
   color: var(--color-text-primary);
   text-decoration: none;
 }
+
+
 
 .card .card-text {
   color: var(--color-text-secondary);
@@ -238,6 +252,8 @@ a:hover{
   font-family: 'Josefin Sans', sans-serif;
   font-size: var(--text-card-title);
   margin: 0 0 10px 0;
+  transition: color .2s ease;
+
 }
 
 .card-text {
@@ -245,6 +261,8 @@ a:hover{
   font-size: var(--text-card);
   margin: 0 0 8px 0;
   line-height: 1.5;
+  transition: color .2s ease;
+
   /* color: var(--color-text-secondary); */
 }
 
@@ -263,7 +281,7 @@ a:hover{
   color: #F66262;
 }
 .grid {
-  margin-top: 30px;
+  margin-top: 36px;
   display: grid;
   grid-column-gap: calc(var(--gap) / 2);
   grid-row-gap: calc(var(--gap) / 2);
@@ -295,9 +313,9 @@ a:hover{
     --text-size-xxl: 50px;
     --gap: 40px;
   }
-  .doing-list{
+  /* .doing-list{
     margin: 0 0 0 14em;
-  }
+  } */
   /* p{
     margin: 0 0 5em 15em;
   } */
