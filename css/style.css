@@ -1,3 +1,17 @@
+/* 
+1. Вдавленный текст на главной. Как у обложки книги.
+2. Анимация появления CODE
+3. Карточки с анимацией свечения
+4. Треугольник в хэдер
+5. Добавить возможность скачать CV (разукрасить ссыки в цвет флагов, когданибудь)
+6. Ссылки на соц. сети выделяются цветом этих соц. сетей
+7. Добавить резюме на английском языке
+8. Сделать расстояние от заголовка и карточек в разделе проекты немного больше
+
+- хотел шрифт Futura, но бесплатный только Жозефина
+*/
+
+
 :root {
   --gap: 40px;
   --color-bg-default: #353636;
@@ -10,6 +24,14 @@
   --text-size-l: 24px;
   --text-size-xl: 48px;
   --text-size-xxl: 60px;
+
+  --text-h1: 72px;
+  --text-hi-sub: 20px;
+  --text-h2: 52px;
+  --text-section: 20px;
+
+  --text-card-title: 24px;
+  --text-card: 14px;
 }
 
 @media (prefers-color-scheme: light){
@@ -87,15 +109,53 @@ a:hover{
   flex-direction: column;
   justify-content: center;
 }
-.main-text{
+.main-text {
   margin: 0;
-  font-family: 'Major Mono Display', monospace;
-  font-size: var(--text-size-xxl);
-  line-height: 1.1em;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: var(--text-h1);
+  line-height: 1.1;
   color: var(--color-text-primary);
   font-weight: normal;
-  height: 2em;
+  /* height: 2em; */
+  text-align: center;
+  font-weight: 500;
 }
+
+.main-text-sub {
+  font-family: 'Montserrat', sans-serif;
+  font-size: var(--text-h1-sub);
+  color: var(--color-text-primary);
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+}
+
+.main-text-span {
+
+}
+
+.section-title {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 500;
+  font-size: var(--text-h2);
+  color: var(--color-text-primary);
+  margin: 0 0 26px 0;
+}
+
+.section-text {
+  color: var(--color-text-primary);
+  font-family: 'Montserrat', sans-serif;
+  margin: 0 0 5px 0;
+  font-size: var(--text-section);
+}
+
+.section-ref {
+  color: var(--color-text-primary);
+  font-family: 'Montserrat', sans-serif;
+  margin: 0 0 5px 0;
+  text-decoration: none;
+}
+
 .doing-list{
   position: relative;
   height: 1em;
@@ -138,31 +198,64 @@ a:hover{
   padding: 60px 0;
 }
 
-h2{
+/* h2{
   margin: 0 0 2em 0;
   font-family: 'Major Mono Display', monospace;
   font-weight: normal;
   font-size: var(--text-size-xl);
   color: var(--color-text-primary);
   line-height: 0.9em;
-}
-p{
+} */
+
+/* p{
   margin: 0 0 5em 17.8em;
-  max-width: 60ch; /*!!!*/
+  max-width: 60ch;
   font-size: var(--text-size-m);
   line-height: 1.5em;
   color: var(--color-text-secondary);
-}
-.card{
+} */
+
+.card {
   display: block;
-  padding: 20px 20px 16px;
+  padding: 24px 20px 20px;
   background: var(--color-bg-secondary);
-  border-radius: 8px;
+  border-radius: 6px;
   font-size: var(--text-size-m);
   line-height: 1.5em;
   color: var(--color-text-primary);
   text-decoration: none;
 }
+
+.card .card-text {
+  color: var(--color-text-secondary);
+}
+
+.card:hover .card-text {
+  color: var(--color-text-primary);
+}
+
+.card-title {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: var(--text-card-title);
+  margin: 0 0 10px 0;
+}
+
+.card-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: var(--text-card);
+  margin: 0 0 8px 0;
+  line-height: 1.5;
+  /* color: var(--color-text-secondary); */
+}
+
+.card-text:last-child {
+  margin: 0;
+}
+
+/* .card-text:hover {
+  color: var(--color-text-primary);
+} */
+
 .card span{
   color: var(--color-text-ghost);
 }
@@ -170,6 +263,7 @@ p{
   color: #F66262;
 }
 .grid {
+  margin-top: 30px;
   display: grid;
   grid-column-gap: calc(var(--gap) / 2);
   grid-row-gap: calc(var(--gap) / 2);
@@ -204,9 +298,9 @@ p{
   .doing-list{
     margin: 0 0 0 14em;
   }
-  p{
+  /* p{
     margin: 0 0 5em 15em;
-  }
+  } */
 }
 @media screen and (max-width: 500px){
   :root {
@@ -227,10 +321,15 @@ p{
     margin: 0 .1em;
     color: var(--color-text-ghost);
   }
+  
   .doing-list{
     margin: 0 0 0 11em;
   }
-  p{
+
+}
+
+/* p{
     margin: 0 0 3em 8em;
   }
 }
+*/
