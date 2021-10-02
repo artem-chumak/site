@@ -1,29 +1,15 @@
 /* 
-// 1. Вдавленный текст на главной. Как у обложки книги.
-//2. Анимация появления CODE
-//3. Карточки с анимацией свечения
-//4. Треугольник в хэдер
-//5. Добавить возможность скачать CV (разукрасить ссыки в цвет флагов, когданибудь)
-//6. Ссылки на соц. сети выделяются цветом этих соц. сетей
 7. Добавить резюме на английском языке
-//8. Сделать расстояние от заголовка и карточек в разделе проекты немного больше
-//9. Добавить в подвал ссылки на социальные сети
-//10. Ссылки на соц. сети закрашиваются бекраундом.
 11. В описании файла редми дать ссылки на рефы.
 12. Написать рассказ про концепцию дизайна этого сайта.
-//13. Заголовкам карточек сделать разные цвета
-//14. Добавить LinkedIn??
 16. Яндекс метрику прикрутить
 17. Кнопка день-ночь
-
+18. Поправить семантику html вёрстки
+19. Кнопка день/ночь. Там где сейчас треуголькни. А может и вместо.
 
 - хотел шрифт Futura, но бесплатный только Жозефина
 - хотел, чтобы заголовок карточки тоже был радужный, но пришлось оставить как есть из-за риска, что на других браузерах заголовок может пропасть Мазила привет!
 - не знаю что делать с лого
-*/
-
-/*
-
 */
 
 @property --rotate {
@@ -33,34 +19,11 @@
 }
 
 :root {
-  /* --gap: 40px; */
-  /* --color-bg-default: #353636;
-  --color-bg-secondary: #303131;
-  --color-text-primary: #F2F0EB;
-  --color-text-secondary: rgba(255,255,255,.6);
-  --color-text-ghost: rgba(255,255,255,.3);
-  --color-link-hover: #F66262;
-  --text-size-m: 16px;
-  --text-size-l: 24px;
-  --text-size-xl: 48px;
-  --text-size-xxl: 60px; */
-
-  /* --text-h1: 72px; */
-  /* --text-hi-sub: 20px; */
-  /* --text-h2: 52px; */
-  /* --text-section: 20px; */
-
-  /* --text-card-title: 24px; */
-  /* --text-card: 14px; */
-
-  /* new*/
-
   --gap: 40px;
-
   --color-bg: #353636;
   --color-bg-card: #303131;
   --color-text: #f2f0eb;
-  --color-text-second: #A6A6A3;
+  --color-text-second: #B2B2AF;
   --color-card-title-1: #F66262;
   --color-card-title-2: #55D7D7;
   --color-card-title-3: #f6c562;
@@ -70,7 +33,6 @@
   --color-ref-face: #3b5998;
   --color-ref-telega: #0088cc;
   --color-ref-linked: #dd5143;
-
   --text-h1: 72px;
   --text-h1-sub: 20px;
   --text-header-footer-card: 16px;
@@ -81,29 +43,22 @@
 
 @media (prefers-color-scheme: light){
 :root {
-  --color-bg-default: #f0f0f0;
-  --color-bg-secondary: rgba(221, 224, 223, 0.2);
-  --color-text-primary: #27272A;
-  --color-text-secondary: rgba(39,39,42,.7);
-  --color-text-ghost: rgba(39,39,42,.3);
-  --color-link-hover: #E6A117;
+  --color-bg: #BCBEC0;
+  --color-bg-card: #969799;
+  --color-text: #27272A;
+  --color-text-second: #4D4B4C;
+  --color-ref-git: #6cc644;
+  --color-card-title-1: #420000;
+  --color-card-title-2: #004242;
+  --color-card-title-3: #422C00;
+
+  }
+
+  .header-logo {
+    opacity: 1;
   }
 }
 
-/* html {
-  padding: 0;
-  margin: 0;
-  scroll-behavior: smooth;
-  background: var(--color-bg-default);
-  font-size: var(--text-size-m);
-  font-family: 'Montserrat', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  -webkit-text-size-adjust: 100%;
-  -ms-font-feature-settings: "kern" 1;
-  font-feature-settings: "kern";
-  } */
 html {
   padding: 0;
   margin: 0;
@@ -119,14 +74,6 @@ html {
   -webkit-font-feature-settings: "kern";
   font-feature-settings: "kern";
   }
-
-/* body {
-  width: 100%;
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 0 var(--gap);
-  box-sizing: border-box;
-} */
 
 body {
   width: 100%;
@@ -147,7 +94,6 @@ body {
   z-index: 1;
   display: flex;
   align-items: end;
-  /* min-height: 90px; */
   padding-bottom: calc(var(--gap)/2);
   padding-top: 20px;
 }
@@ -165,10 +111,6 @@ body {
 
 .header-logo:hover {
   opacity: 1;
-}
-
-.header-refbox {
-
 }
 
 .header-ref {
@@ -189,7 +131,7 @@ body {
   margin-right: 0;
 }
 
-.git:hover:before {
+.git:hover::after {
   -webkit-transform: scaleX(1);
       -ms-transform: scaleX(1);
           transform: scaleX(1);
@@ -198,7 +140,7 @@ body {
           transform-origin: bottom left;
 }
 
-.git:before {
+.git::after {
   -webkit-transform: scaleX(0);
       -ms-transform: scaleX(0);
           transform: scaleX(0);
@@ -313,57 +255,6 @@ body {
   display: none;
 }
 
-/* .big {
-  display: none;
-} */
-
-/* .header-ref::before {
-  transform: scaleX(0);
-  transform-origin: bottom right;
-}
-
-.header-ref:hover::before {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
-.header-ref:before {
-  content: " ";
-  display: block;
-  position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
-  inset: 0 0 0 0;
-  background: #BE5D77;
-  z-index: -1;
-  transition: transform .6s ease;
-} */
-
-/* .header-link{
-  text-decoration: none;
-  color: var(--color-text-secondary);
-
-}
-.header-link:not(:last-child)::after {
-  content: "|";
-  margin: 0 1em;
-  color: var(--color-text-ghost);
-}
-
-a {
-  transition: color .2s ease;
-} */
-
-/* a:hover {
-  color: var(--color-link-hover);
-} */
-
-/* .header-link-big{
-  display: inline;
-}
-.header-link-small{
-  display: none;
-} */
-
 .main-section {
   color: var(--color-text);
   height: 100vh;
@@ -426,7 +317,7 @@ a {
 
 .section-title {
   font-family: 'Josefin Sans', sans-serif;
-  font-weight: 500;
+  font-weight: 400;
   font-size: var(--text-h2);
   margin: 0 0 26px 0;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), -2px -1px 4px rgba(255, 255, 255, 0.1);
@@ -443,14 +334,14 @@ a {
   position: relative;
 }
 
-.rus:before {
+.rus::after {
   -webkit-transform: scaleX(0);
       -ms-transform: scaleX(0);
           transform: scaleX(0);
   -webkit-transform-origin: bottom right;
       -ms-transform-origin: bottom right;
           transform-origin: bottom right;
-  content: " ";
+  content: "";
   display: block;
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
@@ -464,7 +355,7 @@ a {
   transition: transform .6s ease, -webkit-transform .6s ease;
 }
 
-.rus:hover:before {
+.rus:hover::after {
   -webkit-transform: scaleX(1);
       -ms-transform: scaleX(1);
           transform: scaleX(1);
@@ -473,14 +364,14 @@ a {
           transform-origin: bottom left;
 }
 
-.eng:before {
+.eng:after {
   -webkit-transform: scaleX(0);
       -ms-transform: scaleX(0);
           transform: scaleX(0);
   -webkit-transform-origin: bottom right;
       -ms-transform-origin: bottom right;
           transform-origin: bottom right;
-  content: " ";
+  content: "";
   display: block;
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
@@ -494,7 +385,7 @@ a {
   transition: transform .6s ease, -webkit-transform .6s ease;
 }
 
-.eng:hover::before {
+.eng:hover::after {
   -webkit-transform: scaleX(1);
       -ms-transform: scaleX(1);
           transform: scaleX(1);
@@ -502,96 +393,6 @@ a {
       -ms-transform-origin: bottom left;
           transform-origin: bottom left;
 }
-
-
-
-/* .section-ref::before {
-  transform: scaleX(0);
-  transform-origin: bottom right;
-}
-
-.section-ref:hover::before {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
-.section-ref:before {
-  content: " ";
-  display: block;
-  position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
-  inset: 0 0 0 0;
-  background: #BE5D77;
-  z-index: -1;
-  transition: transform .6s ease;
-} */
-
-
-/* .section-ref:hover {
-  color: var(--color-text-primary);
-} */
-
-/* .section-text:last-child {
-  margin: 0;
-} */
-
-/* .doing-list{
-  position: relative;
-  height: 1em;
-  padding-left: 0;
-  margin: 0 0 0 12em;
-  overflow: hidden;
-  list-style: none;
-  font-family: 'Major Mono Display', monospace;
-  font-size: var(--text-size-l);
-  line-height: 1em;
-  color: var(--color-text-secondary);
-}
-.letter-one{
-  color: rgba(14,138,138,.9);
-}
-.letter-two{
-  color: #F66262;
-}
-.doing-list-item{
-  position: absolute;
-  top: 100%;
-  animation: animation 8s ease-out infinite;
-}
-
-.doing-list-item:nth-child(1) {
-  animation-delay: 4s;
-}
-
-@keyframes animation {
-  0% {
-    transform: translateY(0);
-  }
-  5%, 49% {
-    transform: translateY(-100%);
-  }
-  55%, 100% {
-    transform: translateY(-200%);
-  }
-} */
-
-
-/* h2{
-  margin: 0 0 2em 0;
-  font-family: 'Major Mono Display', monospace;
-  font-weight: normal;
-  font-size: var(--text-size-xl);
-  color: var(--color-text-primary);
-  line-height: 0.9em;
-} */
-
-/* p{
-  margin: 0 0 5em 17.8em;
-  max-width: 60ch;
-  font-size: var(--text-size-m);
-  line-height: 1.5em;
-  color: var(--color-text-secondary);
-} */
 
 .grid {
   margin-top: 38px;
@@ -642,7 +443,7 @@ a {
   background-image: linear-gradient(
     var(--rotate)
     , #F69C9C, #89D7D7 43%, #F6D89C);
-  opacity: 1;
+  /* opacity: 1; */
   -webkit-transition: opacity .5s;
   -o-transition: opacity .5s;
   transition: opacity .5s;
@@ -668,6 +469,9 @@ a {
     var(--rotate)
     , #F66262, #55D7D7 43%, #F6C562);
   position: absolute;
+  -webkit-transition: opacity .5s;
+  -o-transition: opacity .5s;
+  transition: opacity .5s;
   z-index: -1;
   top: -2px;
   left: -2px;
@@ -704,6 +508,7 @@ a {
 .card-title {
   font-family: 'Josefin Sans', sans-serif;
   font-size: var(--text-card-title);
+  font-weight: 400;
   margin: 0 0 10px 0;
   -webkit-transition: color .4s ease;
   -o-transition: color .4s ease;
@@ -714,7 +519,6 @@ a {
   font-family: 'Montserrat', sans-serif;
   font-size: var(--text-header-footer-card);
   margin: 0 0 8px 0;
-  line-height: 1.5;
   -webkit-transition: color .4s ease;
   -o-transition: color .4s ease;
   transition: color .4s ease;
@@ -760,24 +564,10 @@ a {
     grid-template-columns: 1fr;
   }
 
-  :root {
-    /* --text-size-m: 16px;
-    --text-size-l: 18px;
-    --text-size-xl: 36px;
-    --text-size-xxl: 50px; */
-    /* --gap: 40px; */
-  }
-
   .header-ref {
     margin-right: 2px;
   }
-
-  /* .doing-list{
-    margin: 0 0 0 14em;
-  } */
-  /* p{
-    margin: 0 0 5em 15em;
-  } */
+}
 
 @media screen and (max-width: 550px) {
   .small {
@@ -788,46 +578,16 @@ a {
   }
 }
 
-
-
-}
-@media screen and (max-width: 500px){
+@media screen and (max-width: 500px) {
   :root {
-    /* --text-size-m: 16px;
-    --text-size-l: 16px;
-    --text-size-xl: 28px;
-    --text-size-xxl: 36px; */
+    --text-h1: 60px;
+    --text-h1-sub: 18px;
+    --text-h2: 44px;
+    --text-section: 18px;
     --gap: 20px;
   }
-
 
   .header-ref {
     margin-right: 0;
   }
-
-  /* .header-link-big{
-    display: none;
-  }
-
-  .header-link-small{
-    display: inline;
-  }
-
-
-  .header-link:not(:last-child)::after {
-    content: "|";
-    margin: 0 .1em;
-    color: var(--color-text-ghost);
-  }
-   */
-  /* .doing-list{
-    margin: 0 0 0 11em;
-  } */
-
 }
-
-/* p{
-    margin: 0 0 3em 8em;
-  }
-}
-*/
