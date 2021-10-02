@@ -11,6 +11,9 @@
 10. Ссылки на соц. сети закрашиваются бекраундом.
 11. В описании файла редми дать ссылки на рефы.
 12. Написать рассказ про концепцию дизайна этого сайта.
+13. Заголовкам карточек сделать разные цвета
+14. Добавить LinkedIn??
+15. Икона вставки в соц сети
 
 
 - хотел шрифт Futura, но бесплатный только Жозефина
@@ -135,6 +138,7 @@ a:hover {
   /* height: 2em; */
   text-align: center;
   font-weight: 500;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), -2px -1px 4px rgba(255, 255, 255, 0.1);
 }
 
 .main-text-sub {
@@ -147,7 +151,16 @@ a:hover {
 }
 
 .main-text-span {
+  -webkit-animation: 15s ease 0s normal forwards infinite blurbyfilter;
+}
 
+@keyframes blurbyfilter {
+  0% { filter:blur();opacity:0; }
+  10% { filter:blur(8px);opacity: 0.2; }
+  20% { filter:blur(1px);/* opacity: 0,5;*/ }
+  50% { filter:blur();opacity: 0,8; }
+  80% { filter:blur();opacity:1; }
+  100% { filter:blur(4px);opacity:0; }
 }
 
 .section-title {
@@ -156,6 +169,8 @@ a:hover {
   font-size: var(--text-h2);
   color: var(--color-text-primary);
   margin: 0 0 26px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), -2px -1px 4px rgba(255, 255, 255, 0.1);
+
 }
 
 .section-text {
