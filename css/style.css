@@ -9,6 +9,9 @@
 8. Сделать расстояние от заголовка и карточек в разделе проекты немного больше
 9. Добавить в подвал ссылки на социальные сети
 10. Ссылки на соц. сети закрашиваются бекраундом.
+11. В описании файла редми дать ссылки на рефы.
+12. Написать рассказ про концепцию дизайна этого сайта.
+
 
 - хотел шрифт Futura, но бесплатный только Жозефина
 - хотел, чтобы заголовок карточки тоже был радужный, но пришлось оставить как есть из-за риска, что на других браузерах заголовок может пропасть Мазила привет!
@@ -164,16 +167,58 @@ a:hover {
 
 
 
+.section-ref::before {
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+
+.section-ref:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.section-ref:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  inset: 0 0 0 0;
+  background: #BE5D77;
+  z-index: -1;
+  transition: transform .6s ease;
+}
+
+/*
+гитхаб
+#6e5494
+facebook
+#3b5998
+telegram
+#0088cc
+
+rus
+#5199FF
+eng
+#BE5D77
+
+
+*/
+
 .section-ref {
   color: var(--color-text-primary);
   font-family: 'Montserrat', sans-serif;
   margin: 0;
   text-decoration: none;
+  position: relative;
 }
 
-.section-text:last-child {
-  margin: 0;
+.section-ref:hover {
+  color: var(--color-text-primary);
 }
+
+/* .section-text:last-child {
+  margin: 0;
+} */
 
 /* .doing-list{
   position: relative;
