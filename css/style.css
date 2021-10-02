@@ -1,21 +1,29 @@
 /* 
 1. Вдавленный текст на главной. Как у обложки книги.
 2. Анимация появления CODE
-3. Карточки с анимацией свечения
+//3. Карточки с анимацией свечения
 4. Треугольник в хэдер
 5. Добавить возможность скачать CV (разукрасить ссыки в цвет флагов, когданибудь)
 6. Ссылки на соц. сети выделяются цветом этих соц. сетей
 7. Добавить резюме на английском языке
 8. Сделать расстояние от заголовка и карточек в разделе проекты немного больше
+9. Добавить в подвал ссылки на социальные сети
+10. Ссылки на соц. сети закрашиваются бекраундом.
 
 - хотел шрифт Futura, но бесплатный только Жозефина
+- хотел, чтобы заголовок карточки тоже был радужный, но пришлось оставить как есть из-за риска, что на других браузерах заголовок может пропасть Мазила привет!
 */
 
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
 
 :root {
   --gap: 40px;
   --color-bg-default: #353636;
-  --color-bg-secondary: rgba(28, 28, 28, 0.2);
+  --color-bg-secondary: #303131;
   --color-text-primary: #F2F0EB;
   --color-text-secondary: rgba(255,255,255,.6);
   --color-text-ghost: rgba(255,255,255,.3);
@@ -47,7 +55,7 @@
   }
 }
 
-body, html{
+html {
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
@@ -62,7 +70,7 @@ body, html{
   font-feature-settings: "kern";
   }
 
-body{
+body {
   width: 100%;
   max-width: 1180px;
   margin: 0 auto;
@@ -229,13 +237,59 @@ a:hover {
 
 .card {
   display: block;
-  padding: 28px 20px 20px;
+  padding: 26px 20px 20px;
   background: var(--color-bg-secondary);
   border-radius: 6px;
   font-size: var(--text-size-m);
   line-height: 1.5em;
   color: var(--color-text-primary);
   text-decoration: none;
+  position: relative;
+}
+
+.card:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(50px);
+  background-image: linear-gradient(
+    var(--rotate)
+    , #F69C9C, #89D7D7 43%, #F6D89C);
+  opacity: 1;
+  transition: opacity .5s;
+  animation: spin 5s linear infinite;
+  opacity: 0;
+}
+
+.card:before {
+  content: "";
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  border-radius: 8px;
+  background-image: linear-gradient(
+    var(--rotate)
+    , #F66262, #55D7D7 43%, #F6C562);
+  position: absolute;
+  z-index: -1;
+  top: -2px;
+  left: -2px;
+  animation: spin 5s linear infinite;
+  opacity: 0;
+}
+
+.card:hover:before {
+  opacity: 1;
+}
+
+.card:hover:after {
+  opacity: 1;
 }
 
 
@@ -274,18 +328,31 @@ a:hover {
   color: var(--color-text-primary);
 } */
 
-.card span{
+/* .card span{
   color: var(--color-text-ghost);
-}
+} */
+
 .card:hover{
   color: #F66262;
 }
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
+
+
 .grid {
-  margin-top: 36px;
+  margin-top: 38px;
   display: grid;
   grid-column-gap: calc(var(--gap) / 2);
   grid-row-gap: calc(var(--gap) / 2);
 }
+
 .grid-ratio{
   grid-template-columns: 1fr 1fr 1fr;
 }
