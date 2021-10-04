@@ -3,11 +3,12 @@
 11. В описании файла редми дать ссылки на рефы.
 12. Написать рассказ про концепцию дизайна этого сайта.
 //16. Яндекс метрику прикрутить
-17. Кнопка день-ночь
 18. Поправить семантику html вёрстки
 19. Кнопка день/ночь. Там где сейчас треуголькни. А может и вместо.
-20. Поменять сокращенное название у Линкеда
-20. Поменять цвет у карточки Место. Должна быть одна светлота с остальными
+20. Докидать ссылки на проекты. Сделать их как в CV
+21. Проверить грамотность.
+22. Настроить иконку при поисковой выдачи.
+23. Иконка в посте социальных сетей.
 
 - хотел шрифт Futura, но бесплатный только Жозефина
 - хотел, чтобы заголовок карточки тоже был радужный,
@@ -28,7 +29,7 @@
   --color-bg-card: #303131;
   --color-text: #f2f0eb;
   --color-text-second: #B2B2AF;
-  --color-card-title-1: #F66262;
+  --color-card-title-1: #FF6666;
   --color-card-title-2: #55D7D7;
   --color-card-title-3: #f6c562;
   --color-cv-eng: #BE5D77;
@@ -55,11 +56,6 @@
   --color-card-title-1: #420000;
   --color-card-title-2: #004242;
   --color-card-title-3: #422C00;
-
-  }
-
-  .header-logo {
-    opacity: 1;
   }
 }
 
@@ -98,7 +94,7 @@ body {
   z-index: 1;
   display: flex;
   align-items: end;
-  padding-bottom: calc(var(--gap)/2);
+  padding-bottom: 20px;
   padding-top: 20px;
 }
 
@@ -549,7 +545,7 @@ body {
   color: var(--color-card-title-3);
 }
 
-.footer{
+.footer {
   width: 100%;
   box-sizing: border-box;
   padding: 18px 0 30px;
@@ -558,13 +554,13 @@ body {
 }
 
 @media screen and (max-width: 960px) {
-  .grid-ratio{
+  .grid-ratio {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media screen and (max-width: 660px) {
-  .grid-ratio{
+  .grid-ratio {
     grid-template-columns: 1fr;
   }
 
