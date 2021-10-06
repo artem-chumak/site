@@ -31,8 +31,8 @@
 
 @media (prefers-color-scheme: light){
 :root {
-  --color-bg: #BCBEC0;
-  --color-bg-card: #AFB0B3;
+  --color-bg: #D4D6D9;
+  --color-bg-card: #C7C9CC;
   --color-text: #27272A;
   --color-text-second: #4D4B4C;
   --color-ref-git: #6cc644;
