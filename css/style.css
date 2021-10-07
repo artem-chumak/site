@@ -278,7 +278,6 @@ body {
 	position: relative;
 	display: inline-block;
 	width: calc(50vw - 310px);
-  /* max-width: 310px; */
 	height: 2px;
 	vertical-align: middle;
 	background: var(--color-text);
@@ -612,10 +611,6 @@ body {
     --text-section: 18px;
     --gap: 20px;
   }
-
-  /* .header-ref {
-    margin-right: 0;
-  } */
 }
 
 @media screen and (max-width: 360px) {
