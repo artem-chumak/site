@@ -578,7 +578,7 @@ body {
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 760px) {
 .main-text:before,
 .main-text:after {
 	display: none;
@@ -591,7 +591,7 @@ body {
   }
 
   .header-ref {
-    margin-right: 2px;
+    margin-right: 6px;
   }
 }
 
@@ -613,7 +613,13 @@ body {
     --gap: 20px;
   }
 
-  .header-ref {
+  /* .header-ref {
     margin-right: 0;
+  } */
+}
+
+@media screen and (max-width: 360px) {
+  .header-ref {
+    margin-right: 2px;
   }
 }
