@@ -1,22 +1,3 @@
-/* 
-7. Добавить резюме на английском языке
-11. В описании файла редми дать ссылки на рефы.
-12. Написать рассказ про концепцию дизайна этого сайта.
-//16. Яндекс метрику прикрутить
-17. Кнопка день-ночь
-18. Поправить семантику html вёрстки
-19. Кнопка день/ночь. Там где сейчас треуголькни. А может и вместо.
-20. Поменять сокращенное название у Линкеда
-20. Поменять цвет у карточки Место. Должна быть одна светлота с остальными
-21. Настроить отображение в поисковике. Иконка, всё такое
-
-- хотел шрифт Futura, но бесплатный только Жозефина
-- хотел, чтобы заголовок карточки тоже был радужный,
-но пришлось оставить как есть из-за риска,
-что на других браузерах заголовок может пропасть Мазила привет!
-- не знаю что делать с лого
-*/
-
 @property --rotate {
   syntax: "<angle>";
   initial-value: 132deg;
@@ -24,12 +5,13 @@
 }
 
 :root {
+  --max-width: 1280px;
   --gap: 40px;
   --color-bg: #353636;
   --color-bg-card: #303131;
   --color-text: #f2f0eb;
   --color-text-second: #B2B2AF;
-  --color-card-title-1: #F66262;
+  --color-card-title-1: #FF6666;
   --color-card-title-2: #55D7D7;
   --color-card-title-3: #f6c562;
   --color-cv-eng: #BE5D77;
@@ -39,8 +21,9 @@
   --color-ref-telega: #0088cc;
   --color-ref-linked: #dd5143;
   --text-h1: 72px;
-  --text-h1-sub: 20px;
-  --text-header-footer-card: 16px;
+  --text-h1-sub: 18px;
+  --text-header-card: 16px;
+  --text-footer: 14px;
   --text-h2: 52px;
   --text-section: 20px;
   --text-card-title: 24px;
@@ -48,19 +31,14 @@
 
 @media (prefers-color-scheme: light){
 :root {
-  --color-bg: #BCBEC0;
-  --color-bg-card: #969799;
+  --color-bg: #E1E3E5;
+  --color-bg-card: #D4D5D9;
   --color-text: #27272A;
   --color-text-second: #4D4B4C;
   --color-ref-git: #6cc644;
   --color-card-title-1: #420000;
   --color-card-title-2: #004242;
   --color-card-title-3: #422C00;
-
-  }
-
-  .header-logo {
-    opacity: 1;
   }
 }
 
@@ -69,7 +47,7 @@ html {
   margin: 0;
   scroll-behavior: smooth;
   background: var(--color-bg);
-  font-size: var(--text-header-footer-card);
+  font-size: var(--text-header-card);
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -82,32 +60,34 @@ html {
 
 body {
   width: 100%;
-  max-width: 1180px;
   margin: 0 auto;
-  padding: 0 var(--gap);
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-.header{
+.header {
   position: fixed;
-  width: calc(100% - var(--gap) * 2);
-  max-width: 1100px;
+  width: 100%;
   box-sizing: border-box;
   background: var(--color-bg);
-  font-size: var(--text-header-footer-card);
+  font-size: var(--text-header-card);
   z-index: 1;
+}
+
+.header-box {
   display: flex;
-  align-items: end;
-  padding-bottom: calc(var(--gap)/2);
-  padding-top: 20px;
+  align-items: flex-end;
+  max-width: var(--max-width);
+  justify-content: space-between;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 20px var(--gap) 20px;
 }
 
 .header-logo {
   height: 36px;
   width: 36px;
   background-image: url(/image/logo3.svg);
-  margin-right: auto;
   opacity: 0.15;
   -webkit-transition: all .5s ease;
   -o-transition: all .5s ease;
@@ -264,6 +244,10 @@ body {
   color: var(--color-text);
   height: 100vh;
   max-height: 1000px;
+  max-width: var(--max-width);
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 var(--gap) 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -284,18 +268,43 @@ body {
   text-align: center;
   font-weight: 500;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), -2px -1px 4px rgba(255, 255, 255, 0.1);
+  position: relative;
+  display: inline-block;
+}
+
+.main-text:before,
+.main-text:after {
+	content: "";
+	position: relative;
+	display: inline-block;
+	width: calc(50vw - 310px);
+	height: 2px;
+	vertical-align: middle;
+	background: var(--color-text);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2), -2px -1px 2px rgba(255, 255, 255, 0.1);
+}
+.main-text:before {    
+	left: -0.5em;
+	margin: 0 0 0 -50%;
+}
+.main-text:after {    
+	left: 0.5em;
+	margin: 0 -50% 0 0;
 }
 
 .main-text-sub {
+  font-family: 'Josefin Sans', sans-serif;
   font-size: var(--text-h1-sub);
+  color: var(--color-text-second);
   text-align: center;
-  font-weight: 500;
-  letter-spacing: 2.5px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  margin: 20px 0 0;
 }
 
 .main-text-span {
-  -webkit-animation: 15s ease 0s normal forwards infinite blurbyfilter;
-          animation: 15s ease 0s normal forwards infinite blurbyfilter;
+  -webkit-animation: 15s ease 0s normal forwards blurbyfilter;
+          animation: 15s ease 0s normal forwards blurbyfilter;
 }
 
 @-webkit-keyframes blurbyfilter {
@@ -304,7 +313,7 @@ body {
   20% { -webkit-filter:blur(1px); filter:blur(1px) }
   50% { -webkit-filter:blur(); filter:blur(); opacity: 0,8; }
   80% { -webkit-filter:blur(); filter:blur(); opacity:1; }
-  100% { -webkit-filter:blur(4px); filter:blur(4px); opacity:0; }
+  100% { -webkit-filter:blur(); filter:blur(); opacity:1; }
 }
 @keyframes blurbyfilter {
   0% { -webkit-filter:blur(); filter:blur(); opacity:0; }
@@ -312,12 +321,15 @@ body {
   20% { -webkit-filter:blur(1px); filter:blur(1px) }
   50% { -webkit-filter:blur(); filter:blur(); opacity: 0,8; }
   80% { -webkit-filter:blur(); filter:blur(); opacity:1; }
-  100% { -webkit-filter:blur(4px); filter:blur(4px); opacity:0; }
+  100% { -webkit-filter:blur(); filter:blur(); opacity:1; }
 }
 
 .section {
-  padding: 60px 0;
   color: var(--color-text);
+  max-width: var(--max-width);
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 60px var(--gap) 60px;
 }
 
 .section-title {
@@ -448,7 +460,6 @@ body {
   background-image: linear-gradient(
     var(--rotate)
     , #F69C9C, #89D7D7 43%, #F6D89C);
-  /* opacity: 1; */
   -webkit-transition: opacity .5s;
   -o-transition: opacity .5s;
   transition: opacity .5s;
@@ -522,7 +533,7 @@ body {
 
 .card-text {
   font-family: 'Montserrat', sans-serif;
-  font-size: var(--text-header-footer-card);
+  font-size: var(--text-header-card);
   margin: 0 0 8px 0;
   -webkit-transition: color .4s ease;
   -o-transition: color .4s ease;
@@ -550,27 +561,36 @@ body {
   color: var(--color-card-title-3);
 }
 
-.footer{
+.footer {
   width: 100%;
   box-sizing: border-box;
-  padding: 18px 0 30px;
-  font-size: var(--text-header-footer-card);
+  font-size: var(--text-footer);
   color: var(--color-text-second);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 18px var(--gap) 30px;
 }
 
 @media screen and (max-width: 960px) {
-  .grid-ratio{
+  .grid-ratio {
     grid-template-columns: 1fr 1fr;
   }
 }
 
+@media screen and (max-width: 760px) {
+.main-text:before,
+.main-text:after {
+	display: none;
+}
+}
+
 @media screen and (max-width: 660px) {
-  .grid-ratio{
+  .grid-ratio {
     grid-template-columns: 1fr;
   }
 
   .header-ref {
-    margin-right: 2px;
+    margin-right: 6px;
   }
 }
 
@@ -586,13 +606,15 @@ body {
 @media screen and (max-width: 500px) {
   :root {
     --text-h1: 60px;
-    --text-h1-sub: 18px;
+    --text-h1-sub: 16px;
     --text-h2: 44px;
     --text-section: 18px;
     --gap: 20px;
   }
+}
 
+@media screen and (max-width: 360px) {
   .header-ref {
-    margin-right: 0;
+    margin-right: 2px;
   }
 }
