@@ -278,22 +278,23 @@ body {
 	position: relative;
 	display: inline-block;
 	width: calc(50vw - 310px);
+  max-width: 950px;
 	height: 2px;
 	vertical-align: middle;
 	background: var(--color-text);
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2), -2px -1px 2px rgba(255, 255, 255, 0.1);
 }
-.main-text:before {    
+.main-text:before {
 	left: -0.5em;
 	margin: 0 0 0 -50%;
 }
-.main-text:after {    
+.main-text:after {
 	left: 0.5em;
 	margin: 0 -50% 0 0;
 }
 
 .main-text-sub {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: var(--text-h1-sub);
   color: var(--color-text-second);
   text-align: center;
