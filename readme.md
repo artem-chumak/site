@@ -17,3 +17,5 @@ https://codepen.io/DerZyklop/pen/AouDn
 https://codepen.io/gayane-gasparyan/pen/jOmaBQK  
 https://codepen.io/nakamods320yen/pen/YzKGeGd  
 https://codepen.io/argyleink/pen/poEjvpd
+
+Нужно будет добавить кастомный курстор и отметить тут реф
