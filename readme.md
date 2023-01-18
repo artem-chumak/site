@@ -19,3 +19,4 @@ https://codepen.io/nakamods320yen/pen/YzKGeGd
 https://codepen.io/argyleink/pen/poEjvpd
 
 Нужно будет добавить кастомный курстор и отметить тут реф
+еще можно добавить рандомности в цвете на сайт... Для чего только?
