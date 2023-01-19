@@ -12,7 +12,7 @@
 
 
 ### References
-https://miocene.io/  
+https://miocene.io/  (старая версия)
 https://codepen.io/DerZyklop/pen/AouDn  
 https://codepen.io/gayane-gasparyan/pen/jOmaBQK  
 https://codepen.io/nakamods320yen/pen/YzKGeGd  
