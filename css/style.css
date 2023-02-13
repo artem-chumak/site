@@ -10,21 +10,26 @@
   --color-bg: #353636;
   --color-bg-card: #303131;
   --color-text: #f2f0eb;
-  --color-text-second: #B2B2AF;
-  --color-card-title-1: #FF6666;
-  --color-card-title-2: #55D7D7;
+  --color-text-second: #cacaca;
+  --color-card-title-1: #ff6666;
+  --color-card-title-2: #55d7d7;
   --color-card-title-3: #f6c562;
-  --color-cv-eng: #BE5D77;
+  --color-cv-eng: #be5d77;
   --color-cv-rus: #5199ff;
   --color-ref-git: #6e5494;
   --color-ref-face: #3b5998;
   --color-ref-telega: #0088cc;
   --color-ref-linked: #dd5143;
-  --color-ref-sliday: #EF9E47;
-  --color-ref-spell: #33A33733;
-  --color-ref-ai: #6119FA99;
+  --color-ref-sliday: #ef9e47;
+  --color-ref-spell: #33a33766;
+  --color-ref-ai: #6119fa99;
   --color-ref-dna: #ff7c1199;
-  --color-ref-karma: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), #EF9E47;;
+  --color-ref-karma: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    ),
+    #ef9e47;
   --text-h1: 72px;
   --text-h1-sub: 18px;
   --text-header-card: 16px;
@@ -34,26 +39,29 @@
   --text-card-title: 24px;
 }
 
-@media (prefers-color-scheme: light){
-:root {
-  --color-bg: #E1E3E5;
-  --color-bg-card: #D4D5D9;
-  --color-text: #27272A;
-  --color-text-second: #4D4B4C;
-  --color-ref-git: #6cc644;
-  --color-card-title-1: #420000;
-  --color-card-title-2: #004242;
-  --color-card-title-3: #422C00;
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-bg: #e1e3e5;
+    --color-bg-card: #d4d5d9;
+    --color-text: #27272a;
+    --color-text-second: #4d4b4c;
+    --color-ref-git: #6cc644;
+    --color-card-title-1: #420000;
+    --color-card-title-2: #004242;
+    --color-card-title-3: #422c00;
+    --color-ref-spell: #33a33733;
   }
 }
 
 html {
+  /* overflow: hidden; */
+  cursor: none;
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
   background: var(--color-bg);
   font-size: var(--text-header-card);
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   line-height: 1.3;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -62,7 +70,11 @@ html {
   -ms-font-feature-settings: "kern" 1;
   -webkit-font-feature-settings: "kern";
   font-feature-settings: "kern";
-  }
+}
+
+#svg-filtro-cursore {
+  display: none;
+}
 
 body {
   width: 100%;
@@ -95,9 +107,10 @@ body {
   width: 36px;
   background-image: url(/image/logo3.svg);
   opacity: 0.15;
-  -webkit-transition: all .5s ease;
-  -o-transition: all .5s ease;
-  transition: all .5s ease;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  cursor: none;
 }
 
 .header-logo:hover {
@@ -109,9 +122,10 @@ body {
   color: var(--color-text-second);
   text-decoration: none;
   position: relative;
-  -webkit-transition: all .5s ease;
-  -o-transition: all .5s ease;
-  transition: all .5s ease;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  cursor: none;
 }
 
 .header-ref:hover {
@@ -124,122 +138,134 @@ body {
 
 .git:hover::after {
   -webkit-transform: scaleX(1);
-      -ms-transform: scaleX(1);
-          transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
   -webkit-transform-origin: bottom left;
-      -ms-transform-origin: bottom left;
-          transform-origin: bottom left;
+  -ms-transform-origin: bottom left;
+  transform-origin: bottom left;
 }
 
 .git::after {
   -webkit-transform: scaleX(0);
-      -ms-transform: scaleX(0);
-          transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
   -webkit-transform-origin: bottom right;
-      -ms-transform-origin: bottom right;
-          transform-origin: bottom right;
+  -ms-transform-origin: bottom right;
+  transform-origin: bottom right;
   content: " ";
   display: block;
   position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   inset: 0 0 0 0;
   background: var(--color-ref-git);
   z-index: -1;
-  -webkit-transition: -webkit-transform .6s ease;
-  transition: -webkit-transform .7s ease;
-  -o-transition: transform .7s ease;
-  transition: transform .7s ease;
-  transition: transform .7s ease, -webkit-transform .6s ease;
+  -webkit-transition: -webkit-transform 0.6s ease;
+  transition: -webkit-transform 0.7s ease;
+  -o-transition: transform 0.7s ease;
+  transition: transform 0.7s ease;
+  transition: transform 0.7s ease, -webkit-transform 0.6s ease;
 }
 
 .face:hover:before {
   -webkit-transform: scaleX(1);
-      -ms-transform: scaleX(1);
-          transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
   -webkit-transform-origin: bottom left;
-      -ms-transform-origin: bottom left;
-          transform-origin: bottom left;
+  -ms-transform-origin: bottom left;
+  transform-origin: bottom left;
 }
 
 .face::before {
   -webkit-transform: scaleX(0);
-      -ms-transform: scaleX(0);
-          transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
   -webkit-transform-origin: bottom right;
-      -ms-transform-origin: bottom right;
-          transform-origin: bottom right;
+  -ms-transform-origin: bottom right;
+  transform-origin: bottom right;
   content: " ";
   display: block;
   position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   inset: 0 0 0 0;
   background: var(--color-ref-face);
   z-index: -1;
-  -webkit-transition: -webkit-transform .6s ease;
-  transition: -webkit-transform .7s ease;
-  -o-transition: transform .7s ease;
-  transition: transform .7s ease;
-  transition: transform .7s ease, -webkit-transform .6s ease;
+  -webkit-transition: -webkit-transform 0.6s ease;
+  transition: -webkit-transform 0.7s ease;
+  -o-transition: transform 0.7s ease;
+  transition: transform 0.7s ease;
+  transition: transform 0.7s ease, -webkit-transform 0.6s ease;
 }
 
 .linked:hover::before {
   -webkit-transform: scaleX(1);
-      -ms-transform: scaleX(1);
-          transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
   -webkit-transform-origin: bottom left;
-      -ms-transform-origin: bottom left;
-          transform-origin: bottom left;
+  -ms-transform-origin: bottom left;
+  transform-origin: bottom left;
 }
 
 .linked::before {
   -webkit-transform: scaleX(0);
-      -ms-transform: scaleX(0);
-          transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
   -webkit-transform-origin: bottom right;
-      -ms-transform-origin: bottom right;
-          transform-origin: bottom right;
+  -ms-transform-origin: bottom right;
+  transform-origin: bottom right;
   content: " ";
   display: block;
   position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   inset: 0 0 0 0;
   background: var(--color-ref-linked);
   z-index: -1;
-  -webkit-transition: -webkit-transform .6s ease;
-  transition: -webkit-transform .7s ease;
-  -o-transition: transform .7s ease;
-  transition: transform .7s ease;
-  transition: transform .7s ease, -webkit-transform .6s ease;
+  -webkit-transition: -webkit-transform 0.6s ease;
+  transition: -webkit-transform 0.7s ease;
+  -o-transition: transform 0.7s ease;
+  transition: transform 0.7s ease;
+  transition: transform 0.7s ease, -webkit-transform 0.6s ease;
 }
 
 .telega:hover:before {
   -webkit-transform: scaleX(1);
-      -ms-transform: scaleX(1);
-          transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
   -webkit-transform-origin: bottom left;
-      -ms-transform-origin: bottom left;
-          transform-origin: bottom left;
+  -ms-transform-origin: bottom left;
+  transform-origin: bottom left;
 }
 
 .telega::before {
   -webkit-transform: scaleX(0);
-      -ms-transform: scaleX(0);
-          transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
   -webkit-transform-origin: bottom right;
-      -ms-transform-origin: bottom right;
-          transform-origin: bottom right;
+  -ms-transform-origin: bottom right;
+  transform-origin: bottom right;
   content: " ";
   display: block;
   position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   inset: 0 0 0 0;
   background: var(--color-ref-telega);
   z-index: -1;
-  -webkit-transition: -webkit-transform .6s ease;
-  transition: -webkit-transform .7s ease;
-  -o-transition: transform .7s ease;
-  transition: transform .7s ease;
-  transition: transform .7s ease, -webkit-transform .6s ease;
+  -webkit-transition: -webkit-transform 0.6s ease;
+  transition: -webkit-transform 0.7s ease;
+  -o-transition: transform 0.7s ease;
+  transition: transform 0.7s ease;
+  transition: transform 0.7s ease, -webkit-transform 0.6s ease;
 }
 
 .small {
@@ -259,48 +285,50 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .main-text {
   margin: 0;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-size: var(--text-h1);
   line-height: 1.1;
   text-align: center;
   font-weight: 500;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), -2px -1px 4px rgba(255, 255, 255, 0.1);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2),
+    -2px -1px 4px rgba(255, 255, 255, 0.1);
   position: relative;
   display: inline-block;
 }
 
 .main-text:before,
 .main-text:after {
-	content: "";
-	position: relative;
-	display: inline-block;
-	width: calc(50vw - 310px);
+  content: "";
+  position: relative;
+  display: inline-block;
+  width: calc(50vw - 310px);
   max-width: 950px;
-	height: 2px;
-	vertical-align: middle;
-	background: var(--color-text);
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2), -2px -1px 2px rgba(255, 255, 255, 0.1);
+  height: 2px;
+  vertical-align: middle;
+  background: var(--color-text);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2),
+    -2px -1px 2px rgba(255, 255, 255, 0.1);
 }
 .main-text:before {
-	left: -0.5em;
-	margin: 0 0 0 -50%;
+  left: -0.5em;
+  margin: 0 0 0 -50%;
 }
 .main-text:after {
-	left: 0.5em;
-	margin: 0 -50% 0 0;
+  left: 0.5em;
+  margin: 0 -50% 0 0;
 }
 
 .main-text-sub {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: var(--text-h1-sub);
   color: var(--color-text-second);
   text-align: center;
@@ -311,24 +339,70 @@ body {
 
 .main-text-span {
   -webkit-animation: 15s ease 0s normal forwards blurbyfilter;
-          animation: 15s ease 0s normal forwards blurbyfilter;
+  animation: 15s ease 0s normal forwards blurbyfilter;
 }
 
 @-webkit-keyframes blurbyfilter {
-  0% { -webkit-filter:blur(); filter:blur(); opacity:0; }
-  10% { -webkit-filter:blur(8px); filter:blur(8px); opacity: 0.2; }
-  20% { -webkit-filter:blur(1px); filter:blur(1px) }
-  50% { -webkit-filter:blur(); filter:blur(); opacity: 0,8; }
-  80% { -webkit-filter:blur(); filter:blur(); opacity:1; }
-  100% { -webkit-filter:blur(); filter:blur(); opacity:1; }
+  0% {
+    -webkit-filter: blur();
+    filter: blur();
+    opacity: 0;
+  }
+  10% {
+    -webkit-filter: blur(8px);
+    filter: blur(8px);
+    opacity: 0.2;
+  }
+  20% {
+    -webkit-filter: blur(1px);
+    filter: blur(1px);
+  }
+  50% {
+    -webkit-filter: blur();
+    filter: blur();
+    opacity: 0, 8;
+  }
+  80% {
+    -webkit-filter: blur();
+    filter: blur();
+    opacity: 1;
+  }
+  100% {
+    -webkit-filter: blur();
+    filter: blur();
+    opacity: 1;
+  }
 }
 @keyframes blurbyfilter {
-  0% { -webkit-filter:blur(); filter:blur(); opacity:0; }
-  10% { -webkit-filter:blur(8px); filter:blur(8px); opacity: 0.2; }
-  20% { -webkit-filter:blur(1px); filter:blur(1px) }
-  50% { -webkit-filter:blur(); filter:blur(); opacity: 0,8; }
-  80% { -webkit-filter:blur(); filter:blur(); opacity:1; }
-  100% { -webkit-filter:blur(); filter:blur(); opacity:1; }
+  0% {
+    -webkit-filter: blur();
+    filter: blur();
+    opacity: 0;
+  }
+  10% {
+    -webkit-filter: blur(8px);
+    filter: blur(8px);
+    opacity: 0.2;
+  }
+  20% {
+    -webkit-filter: blur(1px);
+    filter: blur(1px);
+  }
+  50% {
+    -webkit-filter: blur();
+    filter: blur();
+    opacity: 0, 8;
+  }
+  80% {
+    -webkit-filter: blur();
+    filter: blur();
+    opacity: 1;
+  }
+  100% {
+    -webkit-filter: blur();
+    filter: blur();
+    opacity: 1;
+  }
 }
 
 .section {
@@ -340,11 +414,12 @@ body {
 }
 
 .section-title {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-weight: 400;
   font-size: var(--text-h2);
   margin: 0 0 26px 0;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), -2px -1px 4px rgba(255, 255, 255, 0.1);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2),
+    -2px -1px 4px rgba(255, 255, 255, 0.1);
 }
 
 .section-text {
@@ -357,220 +432,242 @@ body {
   color: var(--color-text-primary);
   text-decoration: none;
   position: relative;
+  cursor: none;
 }
 
 .rus::after {
   -webkit-transform: scaleX(0);
-      -ms-transform: scaleX(0);
-          transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
   -webkit-transform-origin: bottom right;
-      -ms-transform-origin: bottom right;
-          transform-origin: bottom right;
+  -ms-transform-origin: bottom right;
+  transform-origin: bottom right;
   content: "";
   display: block;
   position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   inset: 0 0 0 0;
   background: var(--color-cv-rus);
   z-index: -1;
-  -webkit-transition: -webkit-transform .6s ease;
-  transition: -webkit-transform .6s ease;
-  -o-transition: transform .6s ease;
-  transition: transform .6s ease;
-  transition: transform .6s ease, -webkit-transform .6s ease;
+  -webkit-transition: -webkit-transform 0.6s ease;
+  transition: -webkit-transform 0.6s ease;
+  -o-transition: transform 0.6s ease;
+  transition: transform 0.6s ease;
+  transition: transform 0.6s ease, -webkit-transform 0.6s ease;
 }
 
 .rus:hover::after {
   -webkit-transform: scaleX(1);
-      -ms-transform: scaleX(1);
-          transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
   -webkit-transform-origin: bottom left;
-      -ms-transform-origin: bottom left;
-          transform-origin: bottom left;
+  -ms-transform-origin: bottom left;
+  transform-origin: bottom left;
 }
 
 .eng:after {
   -webkit-transform: scaleX(0);
-      -ms-transform: scaleX(0);
-          transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
   -webkit-transform-origin: bottom right;
-      -ms-transform-origin: bottom right;
-          transform-origin: bottom right;
+  -ms-transform-origin: bottom right;
+  transform-origin: bottom right;
   content: "";
   display: block;
   position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   inset: 0 0 0 0;
   background: var(--color-cv-eng);
   z-index: -1;
-  -webkit-transition: -webkit-transform .6s ease;
-  transition: -webkit-transform .6s ease;
-  -o-transition: transform .6s ease;
-  transition: transform .6s ease;
-  transition: transform .6s ease, -webkit-transform .6s ease;
+  -webkit-transition: -webkit-transform 0.6s ease;
+  transition: -webkit-transform 0.6s ease;
+  -o-transition: transform 0.6s ease;
+  transition: transform 0.6s ease;
+  transition: transform 0.6s ease, -webkit-transform 0.6s ease;
 }
 
 .eng:hover::after {
   -webkit-transform: scaleX(1);
-      -ms-transform: scaleX(1);
-          transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
   -webkit-transform-origin: bottom left;
-      -ms-transform-origin: bottom left;
-          transform-origin: bottom left;
+  -ms-transform-origin: bottom left;
+  transform-origin: bottom left;
 }
 
 .sliday:after {
   -webkit-transform: scaleX(0);
-      -ms-transform: scaleX(0);
-          transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
   -webkit-transform-origin: bottom right;
-      -ms-transform-origin: bottom right;
-          transform-origin: bottom right;
+  -ms-transform-origin: bottom right;
+  transform-origin: bottom right;
   content: "";
   display: block;
   position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   inset: 0 0 0 0;
   background: var(--color-ref-sliday);
   z-index: -1;
-  -webkit-transition: -webkit-transform .6s ease;
-  transition: -webkit-transform .6s ease;
-  -o-transition: transform .6s ease;
-  transition: transform .6s ease;
-  transition: transform .6s ease, -webkit-transform .6s ease;
+  -webkit-transition: -webkit-transform 0.6s ease;
+  transition: -webkit-transform 0.6s ease;
+  -o-transition: transform 0.6s ease;
+  transition: transform 0.6s ease;
+  transition: transform 0.6s ease, -webkit-transform 0.6s ease;
 }
 
 .sliday:hover::after {
   -webkit-transform: scaleX(1);
-      -ms-transform: scaleX(1);
-          transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
   -webkit-transform-origin: bottom left;
-      -ms-transform-origin: bottom left;
-          transform-origin: bottom left;
+  -ms-transform-origin: bottom left;
+  transform-origin: bottom left;
 }
 
 .karma:after {
   -webkit-transform: scaleX(0);
-      -ms-transform: scaleX(0);
-          transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
   -webkit-transform-origin: bottom right;
-      -ms-transform-origin: bottom right;
-          transform-origin: bottom right;
+  -ms-transform-origin: bottom right;
+  transform-origin: bottom right;
   content: "";
   display: block;
   position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   inset: 0 0 0 0;
   background: var(--color-ref-karma);
   background-blend-mode: soft-light, normal;
   z-index: -1;
-  -webkit-transition: -webkit-transform .6s ease;
-  transition: -webkit-transform .6s ease;
-  -o-transition: transform .6s ease;
-  transition: transform .6s ease;
-  transition: transform .6s ease, -webkit-transform .6s ease;
+  -webkit-transition: -webkit-transform 0.6s ease;
+  transition: -webkit-transform 0.6s ease;
+  -o-transition: transform 0.6s ease;
+  transition: transform 0.6s ease;
+  transition: transform 0.6s ease, -webkit-transform 0.6s ease;
 }
 
 .karma:hover::after {
   -webkit-transform: scaleX(1);
-      -ms-transform: scaleX(1);
-          transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
   -webkit-transform-origin: bottom left;
-      -ms-transform-origin: bottom left;
-          transform-origin: bottom left;
+  -ms-transform-origin: bottom left;
+  transform-origin: bottom left;
 }
 
 .spell:after {
   -webkit-transform: scaleX(0);
-      -ms-transform: scaleX(0);
-          transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
   -webkit-transform-origin: bottom right;
-      -ms-transform-origin: bottom right;
-          transform-origin: bottom right;
+  -ms-transform-origin: bottom right;
+  transform-origin: bottom right;
   content: "";
   display: block;
   position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   inset: 0 0 0 0;
   background: var(--color-ref-spell);
   background-blend-mode: soft-light, normal;
   z-index: -1;
-  -webkit-transition: -webkit-transform .6s ease;
-  transition: -webkit-transform .6s ease;
-  -o-transition: transform .6s ease;
-  transition: transform .6s ease;
-  transition: transform .6s ease, -webkit-transform .6s ease;
+  -webkit-transition: -webkit-transform 0.6s ease;
+  transition: -webkit-transform 0.6s ease;
+  -o-transition: transform 0.6s ease;
+  transition: transform 0.6s ease;
+  transition: transform 0.6s ease, -webkit-transform 0.6s ease;
 }
 
 .spell:hover::after {
   -webkit-transform: scaleX(1);
-      -ms-transform: scaleX(1);
-          transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
   -webkit-transform-origin: bottom left;
-      -ms-transform-origin: bottom left;
-          transform-origin: bottom left;
+  -ms-transform-origin: bottom left;
+  transform-origin: bottom left;
 }
 
 .ai:after {
   -webkit-transform: scaleX(0);
-      -ms-transform: scaleX(0);
-          transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
   -webkit-transform-origin: bottom right;
-      -ms-transform-origin: bottom right;
-          transform-origin: bottom right;
+  -ms-transform-origin: bottom right;
+  transform-origin: bottom right;
   content: "";
   display: block;
   position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   inset: 0 0 0 0;
   background: var(--color-ref-ai);
   background-blend-mode: soft-light, normal;
   z-index: -1;
-  -webkit-transition: -webkit-transform .6s ease;
-  transition: -webkit-transform .6s ease;
-  -o-transition: transform .6s ease;
-  transition: transform .6s ease;
-  transition: transform .6s ease, -webkit-transform .6s ease;
+  -webkit-transition: -webkit-transform 0.6s ease;
+  transition: -webkit-transform 0.6s ease;
+  -o-transition: transform 0.6s ease;
+  transition: transform 0.6s ease;
+  transition: transform 0.6s ease, -webkit-transform 0.6s ease;
 }
 
 .dna:hover::after {
   -webkit-transform: scaleX(1);
-      -ms-transform: scaleX(1);
-          transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
   -webkit-transform-origin: bottom left;
-      -ms-transform-origin: bottom left;
-          transform-origin: bottom left;
+  -ms-transform-origin: bottom left;
+  transform-origin: bottom left;
 }
 
 .dna:after {
   -webkit-transform: scaleX(0);
-      -ms-transform: scaleX(0);
-          transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
   -webkit-transform-origin: bottom right;
-      -ms-transform-origin: bottom right;
-          transform-origin: bottom right;
+  -ms-transform-origin: bottom right;
+  transform-origin: bottom right;
   content: "";
   display: block;
   position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   inset: 0 0 0 0;
   background: var(--color-ref-dna);
   background-blend-mode: soft-light, normal;
   z-index: -1;
-  -webkit-transition: -webkit-transform .6s ease;
-  transition: -webkit-transform .6s ease;
-  -o-transition: transform .6s ease;
-  transition: transform .6s ease;
-  transition: transform .6s ease, -webkit-transform .6s ease;
+  -webkit-transition: -webkit-transform 0.6s ease;
+  transition: -webkit-transform 0.6s ease;
+  -o-transition: transform 0.6s ease;
+  transition: transform 0.6s ease;
+  transition: transform 0.6s ease, -webkit-transform 0.6s ease;
 }
 
 .ai:hover::after {
   -webkit-transform: scaleX(1);
-      -ms-transform: scaleX(1);
-          transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
   -webkit-transform-origin: bottom left;
-      -ms-transform-origin: bottom left;
-          transform-origin: bottom left;
+  -ms-transform-origin: bottom left;
+  transform-origin: bottom left;
 }
 
 .grid {
@@ -581,7 +678,7 @@ body {
   grid-row-gap: calc(var(--gap) / 2);
 }
 
-.grid-ratio{
+.grid-ratio {
   -ms-grid-columns: 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
 }
@@ -594,6 +691,7 @@ body {
   color: var(--color-text-primary);
   text-decoration: none;
   position: relative;
+  cursor: none;
 }
 
 .card:after {
@@ -607,26 +705,36 @@ body {
   width: 100%;
   margin: 0 auto;
   -webkit-transform: scale(0.8);
-      -ms-transform: scale(0.8);
-          transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8);
   -webkit-filter: blur(50px);
-          filter: blur(50px);
+  filter: blur(50px);
   background-image: -webkit-gradient(
-    linear
-    , left top, left bottom
-    , from(var(--rotate))
-    , color-stop(#F69C9C), color-stop(43%, #89D7D7), to(#F6D89C));
+    linear,
+    left top,
+    left bottom,
+    from(var(--rotate)),
+    color-stop(#f69c9c),
+    color-stop(43%, #89d7d7),
+    to(#f6d89c)
+  );
   background-image: -o-linear-gradient(
-    var(--rotate)
-    , #F69C9C, #89D7D7 43%, #F6D89C);
+    var(--rotate),
+    #f69c9c,
+    #89d7d7 43%,
+    #f6d89c
+  );
   background-image: linear-gradient(
-    var(--rotate)
-    , #F69C9C, #89D7D7 43%, #F6D89C);
-  -webkit-transition: opacity .5s;
-  -o-transition: opacity .5s;
-  transition: opacity .5s;
+    var(--rotate),
+    #f69c9c,
+    #89d7d7 43%,
+    #f6d89c
+  );
+  -webkit-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
   -webkit-animation: spin 5s linear infinite;
-          animation: spin 5s linear infinite;
+  animation: spin 5s linear infinite;
   opacity: 0;
 }
 
@@ -636,25 +744,35 @@ body {
   height: calc(100% + 4px);
   border-radius: 8px;
   background-image: -webkit-gradient(
-    linear
-    , left top, left bottom
-    , from(var(--rotate))
-    , color-stop(#F66262), color-stop(43%, #55D7D7), to(#F6C562));
+    linear,
+    left top,
+    left bottom,
+    from(var(--rotate)),
+    color-stop(#f66262),
+    color-stop(43%, #55d7d7),
+    to(#f6c562)
+  );
   background-image: -o-linear-gradient(
-    var(--rotate)
-    , #F66262, #55D7D7 43%, #F6C562);
+    var(--rotate),
+    #f66262,
+    #55d7d7 43%,
+    #f6c562
+  );
   background-image: linear-gradient(
-    var(--rotate)
-    , #F66262, #55D7D7 43%, #F6C562);
+    var(--rotate),
+    #f66262,
+    #55d7d7 43%,
+    #f6c562
+  );
   position: absolute;
-  -webkit-transition: opacity .5s;
-  -o-transition: opacity .5s;
-  transition: opacity .5s;
+  -webkit-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
   z-index: -1;
   top: -2px;
   left: -2px;
   -webkit-animation: spin 5s linear infinite;
-          animation: spin 5s linear infinite;
+  animation: spin 5s linear infinite;
   opacity: 0;
 }
 
@@ -684,22 +802,22 @@ body {
 }
 
 .card-title {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-size: var(--text-card-title);
   font-weight: 400;
   margin: 0 0 10px 0;
-  -webkit-transition: color .4s ease;
-  -o-transition: color .4s ease;
-  transition: color .4s ease;
+  -webkit-transition: color 0.4s ease;
+  -o-transition: color 0.4s ease;
+  transition: color 0.4s ease;
 }
 
 .card-text {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: var(--text-header-card);
   margin: 0 0 8px 0;
-  -webkit-transition: color .4s ease;
-  -o-transition: color .4s ease;
-  transition: color .4s ease;
+  -webkit-transition: color 0.4s ease;
+  -o-transition: color 0.4s ease;
+  transition: color 0.4s ease;
   color: var(--color-text-second);
 }
 
@@ -740,10 +858,10 @@ body {
 }
 
 @media screen and (max-width: 760px) {
-.main-text:before,
-.main-text:after {
-	display: none;
-}
+  .main-text:before,
+  .main-text:after {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 660px) {
@@ -779,4 +897,27 @@ body {
   .header-ref {
     margin-right: 2px;
   }
+}
+
+.cursor {
+  pointer-events: none;
+  position: fixed;
+  display: block;
+  border-radius: 0;
+  transform-origin: center center;
+  mix-blend-mode: difference;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  filter: url("#goo");
+}
+.cursor span {
+  position: absolute;
+  display: block;
+  width: 26px;
+  height: 26px;
+  border-radius: 20px;
+  background-color: #fff;
+  transform-origin: center center;
+  transform: translate(-50%, -50%);
 }
