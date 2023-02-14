@@ -14,11 +14,11 @@
 9. Посмотреть/разобраться с цветами для разных цветовых схем. Сделать красивее.
 
 ### References
-https://miocene.io/  (старая версия)
-https://codepen.io/DerZyklop/pen/AouDn
-https://codepen.io/gayane-gasparyan/pen/jOmaBQK
-https://codepen.io/nakamods320yen/pen/YzKGeGd
-https://codepen.io/argyleink/pen/poEjvpd
+https://miocene.io/ (старая версия)\
+https://codepen.io/DerZyklop/pen/AouDn \
+https://codepen.io/gayane-gasparyan/pen/jOmaBQK \
+https://codepen.io/nakamods320yen/pen/YzKGeGd \
+https://codepen.io/argyleink/pen/poEjvpd \
 https://codepen.io/DedaloD/pen/GRORNBP
 
 еще можно добавить рандомности в цвете на сайт... Для чего только? FUN! 1. Разноцветные буквы имени. 2. Анимация за именем 3. Собака с уткой из игры или чувак из Морталкомбат.
