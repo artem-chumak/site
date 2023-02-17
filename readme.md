@@ -13,7 +13,7 @@
 8. Рефакторинг .js с курсором. Убрать лишний код.
 9. Посмотреть/разобраться с цветами для разных цветовых схем. Сделать красивее.
 
-block with projects
+block with projects need to change
 
 ### References
 https://miocene.io/ (старая версия)\
