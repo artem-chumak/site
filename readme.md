@@ -27,3 +27,4 @@ https://codepen.io/DedaloD/pen/GRORNBP
 Есть идея по поводу СВГ сайта) Да, так и должно быть.
 
 Monday!
+Tuesday!
