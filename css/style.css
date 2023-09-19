@@ -14,6 +14,7 @@
   --color-card-title-1: #ff6666;
   --color-card-title-2: #55d7d7;
   --color-card-title-3: #f6c562;
+  --color-card-title-4: #F375F3;
   --color-cv-eng: #be5d77;
   --color-cv-rus: #5199ff;
   --color-ref-git: #6e5494;
@@ -49,6 +50,7 @@
     --color-card-title-1: #420000;
     --color-card-title-2: #004242;
     --color-card-title-3: #422c00;
+    --color-card-title-4: #452245;
     --color-ref-spell: #33a33733;
   }
 }
@@ -839,6 +841,10 @@ body {
 
 .third:hover {
   color: var(--color-card-title-3);
+}
+
+.fourth:hover {
+  color: var(--color-card-title-4);
 }
 
 .footer {
